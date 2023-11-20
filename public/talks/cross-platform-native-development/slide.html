@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(style.css);
+    </style>
+  </head>
+  <!-- press p to toggle notes mode -- to re-use above slide layout/styles -->
+  <body>
+    <a href="/talks" style="z-index:9;position:fixed;bottom:10px;left:10px;text-decoration:none;"><=Exit</a>
+    <textarea id="source">
+class: center, middle
+background-image: url(multiple-choice-paths.jpg)
+
+# .white[State of Cross Platform Development <br>2015]
+.white.author[
+John Leung 2015
+]
+
+???
+notes here
+---
+# Topics
+.lg[
+1. Platforms Today
+2. Native Platform Development
+3. Cross Platform Native Development
+4. Finding Unicorn
+]
+---
+# Platforms 2015
+- <b>PC</b> - Windows, OS X, Linux, Chrome OS
+- <b>Mobile</b> - iOS, Android, Windows Phone Mobile
+- <b>Web</b> - Chrome, Firefox, IE, Safari, Edge
+- <i>Others</i> - Game Systems, IoT, Wearables, SmartTV, Auto
+---
+class: center, middle
+# Mythical Unicorn
+---
+background-image: url(Unicorn-Lego.jpg)
+---
+background-image: url(little_chimera_by_tsaoshin-d5c332x.png)
+---
+background-image: url(big_2x_tidekit.jpg)
+---
+# Tidekit
+- The only app development platform that lets you develop HTML5, hybrid and native apps for iOS, Android, Blackberry, Windows, Mac OS X, Linux and the Web
+— all from a single source of code written in JavaScript. 
+- Bindings for different languages including Python, C, C++, Java, C#, Objective-C
+- Beta Testing via paid waiting list of $29 or priority seating for $99
+http://betalist.com/startups/tidekit
+---
+# Vaporware
+- After more than a year with nothing to show, it announced:
+<blockquote><i>We failed to bring the product quickly enough for you. As a result, we came to the serious decision to discontinue TideKit and dissolve our company.</i></blockquote>
+- lawsuits were filed for 1000+ paid supporters
+---
+class: center, middle
+# Native Mobile Development Environments
+---
+# iOS
+- operating system for iphone, ipad, ipod touch, appleTV
+- uses XNU kernel, the kernel for Darwin, a Unix OS which began in form of NeXT’s OS and became the base for OS X
+- iOS SDK stack (hierarchically):
+.md[
+1. Cocoa Touch Platform
+2. Media / Application Services
+3. Core Services
+4. Core OS / iOS kernel
+]
+---
+# Cocoa Touch
+- Multi-touch events and controls
+- Accelerometer support
+- View hierarchy
+- Localization (i18n)
+- Camera support
+---
+# Cocoa Touch key frameworks
+- Foundation Kit Framework
+- UIKit Framework (based on Application Kit)
+- GameKit Framework
+- iAd Framework
+- MapKit Framework
+- Address Book UI Framework
+- EventKit UI Framework
+- Message UI Framework
+- Notification Center Framework
+- PushKit Framework
+- Twitter Framework
+---
+# Native iOS Languages
+- c, c++, objective-C, swift
+- most documentations are still for objective-C
+- “Objective-C - a hacked language to incorporate smalltalk on top of c”
+
+Swift:
+- characterized as “Objective-C without the C”
+- 2.0 announced and open sourced June’15
+- usage is growing
+- will probably replace Objective-C as the de facto language for iOS and MacOS apps
+---
+# Android OS
+- operating system for Android phones, tablets, and PC, Android TV, Android Wear, and Android Auto
+- started life as OS for the Danger smartphone
+- uses version 3.4 or 3.10 of Linux kernel
+---
+background-image: url(Android-System-Architecture.svg)
+---
+
+# Android Runtime Environment
+Dalvik VM:
+- on version 4.4 (Kitkat) and earlier.
+- a JIT (Just In Time compilation) Java VM
+
+ART (Android Runtime):
+- on version 5.0 (Lollipop) and later
+- uses of ahead-of-time (AOT) compilation by compiling entire applications into native machine code upon their installation.
+---
+# Android SDK
+SDK:
+- debugger, libraries, and emulator
+
+Native Languages support:
+- Java (any JVM languages), Go
+- other languages can be compiled to ARM and MIPS, and be installed via the Android NDK (Native Development Kit)
+---
+# Official Tools
+XCode(iOS):
+- IDE containing iOS SDK and OS X SDK targeting the Cocoa Touch and Cocoa Platform
+- available on OS X only, but can run on Windows via a VM
+- provides Different View Layouts, Storyboard Editor
+
+Android Studio(Android):
+- the Official Android IDE powered by IntelliJ
+- available on Windows, Linux, OS X
+
+Visual Studio (Windows, Windows Phone):
+- available on Windows, Linux, OS X
+---
+background-image: url(storyboard_table_view_2x.png)
+---
+background-image: url(android_developing_overview.png)
+---
+class: center, middle
+# Cross Platform Native Development
+---
+# Appcelerator (Javascript)
+- Suite of tools: Dashboard, Titanium, ArrowDB, Arrow Push, Insights/Analytics
+- Compiles to Native targeting iOS, Android, Windows
+- One of the first Cross Mobile Native Platform Development Environment
+- Still strong community
+- $39/mo. for solo
+---
+# RubyMotion (Ruby)
+- targets Native Android, iOS
+- No IDE (use XCode, Android Studio, etc.)
+- Terminal based workflow, deployment
+- watchOS support
+- Not much community and traction, not that great reviews
+---
+# Corona SDK (Lua)
+- targets Native Android, iOS, Windows Phone, Windows, OS X, kindle
+- Designed for gaming, so very gaming centric
+- Comes with Corona Editor IDE
+- Very active community
+- Free SDK limited to API provided 
+- $79/mo. for Enterprise - ability to call C, C++, Objective-C, Java
+- $499/yr/platform for Corona Cards - even easier development
+---
+# Golang Mobile
+- Official support for Android
+- Limited alpha/beta bindings for iOS
+- https://github.com/golang/go/wiki/Mobile
+---
+# Marmalade (C++)
+- No IDE (use XCode, Android Studio, etc.)
+- Single source for your app regardless of platform
+- No virtual machines or language cross translation
+- Can redeploy your app to another platform without recompiling
+---
+background-image: url(marmalade-way.png)
+---
+# RoboVM (Java)
+- Share code targeting iOS, Android, Windows, Linux, OS X and WebGL-enabled browsers
+- Use any JVM languages
+- translates Java bytecode into native ARM or x86 code for Native UX & Performance
+- integrates with Eclipse, IntelliJ IDEA, Netbeans, and XCode's Interface Builder
+- $19/mo. or $199/yr. for solo
+---
+# Xamarin (C#)
+- Suite of tools: Xamarin Platform, Test Cloud, Insights
+- Custom IDE with forms builder
+- Share code targeting Native iOS, Android, Windows, OS X
+- Support for F#, but almost zero documentation/code samples
+- $25/mo. for solo
+---
+# Kivy (Python)
+- <i>
+"Open source Python library for rapid development of multi-touch applications"
+</i>
+- targets Linux, Windows, OS X, Android and iOS
+- runs the same code on all supported platforms
+- can natively use most inputs, protocols and devices including mouse, trackpad, WM_Touch, WM_Pen
+- 4 books published in past 18 months!
+- http://kivy.org/#gallery
+- very active community
+---
+# Kivy Organization
+- a non-profit (as per the French law of 1901) membership organization devoted to advancing open source technology related to the Kivy Framework, created in February 2014.
+- Manages the funding, publicizing, protection of the core Kivy Framework, made available to the public free of charge.
+- Publicizes, promotes the adoption of, and facilitates the ongoing development of Kivy-related technology and educational resources.
+---
+```
+from kivy.app import App
+from kivy.uix.button import Button
+
+class TestApp(App):
+    def build(self):
+        return Button(text='Hello World')
+
+TestApp().run()
+
+class LoadDialog(FloatLayout):
+    def load(self, filename): pass
+    def cancel(self): pass
+
+#:kivy 1.4.0
+<LoadDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Load"
+                on_release: root.load(filechooser.path, filechooser.selection)
+```
+---
+# Silver
+- Implementation of Swift with extensions for cross platform support 
+- from RemObjects LLC. http://www.elementscompiler.com
+- supports Native iOS, OS X, watchOS, Android, JVM platforms, Windows Phone, Windows 8, 10, RT
+- has ability to convert Java Android sources to Silver
+- Swift 2.0 specification support in beta
+- Very active community http://talk.remobjects.com
+- <a href="https://medium.com/@rom1_ubidreams/a-first-look-at-remobjects-silver-how-to-write-a-crossplatform-ios-android-app-in-swift-56fc358ebc37">Building a calculator app in Swift with Silver</a>
+- Free (non FOSS)
+---
+# Silver Extensions
+Extends Swift 2.0’s error handling to handle exceptions from all 3 platforms
+
+Additional keywords and symbols
+- __await - C# style await
+- __event - .NET style multi-cast Events
+- __inline (inline functions)
+- __partial - partial classes
+- __yield - iterators
+- __mapped - Mapped Types - used internally to create cross-platform wrappers with zero overhead
+- @ - Aspects
+- : - attribute scope prefixes
+---
+# Silver IDE
+- uses Visual Studio for Windows
+- “Fire” - their IDE for Mac
+- both IDE can compile to all 3 platforms
+- have contextual menu to open up Android Studio and Xcode to edit UI
+---
+background-image: url(Fire-LaunchXcode.png)
+---
+# React Native
+- “Bringing modern web techniques to mobile“
+- true native UI (only on iOS for now)
+- based on componentkit, a native port of React to iOS also by facebook
+- aims to primarily bring the power of the React programming model to mobile app development
+- aims to be a learn-once write-anywhere tool
+- not aim to be a write-once run-anywhere cross platform tool
+- only environment with virtual DOM and reconciliation, bringing functional programming to the UI layer
+---
+# React Native vs. React
+- Instead of using block elements such as div or section, use the View component, which maps over to the native iOS component UIView
+- All text must be wrapped inside the Text component
+- No stylesheets - all your styling is written as JavaScript objects
+- ES6 is supported out of the box as well as flexbox
+
+sources:
+- http://www.raywenderlich.com/99473/introducing-react-native-building-apps-javascript
+- http://ryanclark.me/going-native-with-react/
+---
+# Conclusion
+- Unicorn exists?
+---
+# Half Unicorns?
+- Kivy, Silver, React Native
+
+    </textarea>
+    <script src="../remark.min.js"></script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

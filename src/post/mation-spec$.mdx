@@ -1,0 +1,62 @@
+---
+title: Mation-spec
+---
+
+### Idea
+
+In trying to create an app where uses can create simulations of 
+origami folds (more on this on a future post), we need a way to
+be able to write English-like commands yet at the same time be
+properly structured. After looking for such a specification and
+not able to find anything even close to it, I set out to create
+one.
+
+### Goals
+
+The goal isn't to create a specification language that is just
+for origami folding. For that, it will just be a custom taylored
+specification with origami folding keywords. The goal is to create
+a specification simple yet powerful and flexible engough to be
+the standard for its intended use case which is command-like
+specifications and configurations.
+
+Core Features includes:
+
+* Human readable commands specification
+* Markdown sections for documentation
+* Non-ambiguous type for values
+
+### Example
+
+```rust
+  steps: [
+    move a;
+    move [1,2] [3 -4]; // comma optional in an array/list
+    turn { x:1, y:2 };
+    turn { x:1  y:2 }; // comma optional in an object/map
+    do [
+      fold points:[3] 90 over-edges:[16];
+      unfold points:[0] 90 over-edges:[18];
+    ];
+  ]
+```
+(Near perfect syntax highlighting by setting the language to `rust`)
+
+Translates to:
+```js
+{
+  steps: [
+    move: 'a',
+    move: [[1, 2], [3, -4]],
+    turn: {x:1, y:2 },
+    turn: {x:1, y:2 },
+    do: [
+      ['fold', { points: [3] }, 90, { 'over-edges': [16] }],
+      ['unfold', { points: [0] }, 90, { 'over-edges': [18] }],
+    ],
+  ]
+}
+```
+
+Have a usecase for it? Love to hear what you think. 
+Source with more details and examples: <a href='https://github.com/mationai/mation-spec' target='_blank'>Mation-spec</a>

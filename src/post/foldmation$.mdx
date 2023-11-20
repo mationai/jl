@@ -1,0 +1,85 @@
+---
+title: foldMation
+---
+
+A new Innovative way to bring Origami Fold Creation and Learning online
+
+### Idea
+
+There should be a way to digitally create origami folds, and no, 
+it's not done via dragging the paper from one corner to another.
+That modality is extremely limiting and won't be able to produce
+anything but the most basic folds. In order to create more common
+folds, we need to be able to manipulate the paper in such a way
+to produce most if not all of the following
+[folds](https://en.wikipedia.org/wiki/Yoshizawa%E2%80%93Randlett_system#Common_operations).
+
+The goal is to create a tool for users to create origami folds; an
+interactive player for folders to learn how to fold from created folds;
+and a community for users to share their creations and learn from each
+other.
+
+How about video? Why not just record the fold for creators and watch
+from videos for folders? Well, this tool isn't really to replace videos.
+First of all, it is highly unlikely that this tool will ever be able to
+produce more complex folds. So it isn't competing against videos on that
+front. For simpler folds, creating it on foldMation should be easier
+than setting up a camera system to record the folding in good lighting
+and later needing to upload to video servers. For folders, a simulator
+can enable unlimited repeats of a difficult step and much faster fast
+forwards and rewinds. It can also provide a way to view the fold from
+more than just the single angle of the video captured.
+
+### Parts
+
+To make this tool possible, there needs be a domain specific language
+that is tailored to origami folding. After looking hard for
+it and not able to find it, I decided to create it myself. More on that in
+this [Mation-spec post](/post/mation-spec).
+
+Having a DSL is great, but it's not enough. We need an interactive way to
+manipulate the paper and to compose the fold instructions without the user
+typing. When the set of keywords of the DSL is small, having the user 
+type the steps not only take away the flow, but it is also much easier 
+to simply click on a limited set of keywords instead. More over, this is
+an app that is perfectly suited to be used on a tablet. Needing to bring
+up the keyboard everytime after manipulating the fold can be an unpleasant
+experience.
+
+What we need is a viewer that can display the paper and allow the user to
+move it around in order to view areas that are not visible. The viewer
+will need to provide a way for users to easily specify the source "points" --
+the folded corners, target "points" or "edges to fold over" if there is no
+target points. It will need to provide a way to specify the many kinds of
+creases, such as those dealing with percentages and degrees.
+
+### Talk
+
+<a target='_blank' href='https://origamiusa.org/classes/pcoc/2023/introducing-fold-simulation-language'><img
+  src='/imgs/img/pcoc2023.png' alt='pcoc 2023'
+  width='500' heigh='400'
+/></a>
+
+I [presented](https://origamiusa.org/classes/pcoc/2023/introducing-fold-simulation-language)
+it at the Pacific Coast Origami Conference in October 2023.
+I was only able to demo it from my computer at the time, but the feedback
+was encouraging and great.
+
+### Release
+
+This is by far the most difficult project I attempted. My initial estimate
+is about a year. It has been almost 2 years now and there is still much to
+be done and many bugs to be fixed. There are just too many special cases
+to handle. Most of the bugs are due to layering of faces. The layering part
+still hasn't been fully ironed out yet. I am not sure if it ever will be. It
+will be a fix as it goes kind of thing. It is currently up online now, but
+I haven't really announced it yet. There are a few important items to be
+done such as a quick lookup reference among others. Goal is to complete these
+last items before end of the year.
+
+So give it a try and let me know what you think. (click on the image)
+<a target='_blank' className='fit' 
+  href='https://foldmation.com'><img
+  src='/imgs/thumbs/fold-bird.png' alt='foldmation.com'
+  width='200' heigh='200'
+/></a>

@@ -1,0 +1,35 @@
+{
+  "name": "site",
+  "version": "1.0.2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --port 3000",
+    "build": "rimraf dist && vite build --outDir dist",
+    "buildssr": "rimraf dist && vite-pages ssr && serve dist",
+    "serve": "serve dist",
+    "deploy": "ntl deploy --prod --dir=./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.13.0"
+  },
+  "devDependencies": {
+    "@mdx-js/react": "^2.3.0",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.2.13",
+    "@vitejs/plugin-react": "^4.0.1",
+    "rimraf": "^4.4.1",
+    "serve": "^14.2.0",
+    "vite": "^4.3.9",
+    "vite-pages-theme-doc": "^4.0.0",
+    "vite-plugin-react-pages": "^4.0.0"
+  }
+}

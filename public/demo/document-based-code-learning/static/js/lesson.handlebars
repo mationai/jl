@@ -1,0 +1,39 @@
+<div class="lesson">
+  <h2>{{title}}</h2>
+  <p>{{safe description}}</p>
+  <h3>Lesson {{lesson}}</h3>
+
+{{#each exercises}}
+  <div class="exercise">
+    <h4>{{this.Description}}</h4>
+    <p>{{safe this.Prompt}}</p>
+
+    {{#if this.ExerciseCode}}
+    <div class="livecode javascript hide no-output" id="ex{{../lesson}}-{{@key}}code">
+      {{this.ExerciseCode}}
+    </div>
+    {{/if}}
+
+    <div class="livecode javascript no-output" id="ex{{../lesson}}-{{@key}}"
+    {{#if this.ExerciseCode}} data-depends-on="ex{{../lesson}}-{{@key}}code" {{/if}}
+    ></div>
+    <div class="livecode output final" data-for="ex{{../lesson}}-{{@key}}" data-exercise={{@key}}></div>
+
+    <div class="hint-bar">
+      <div class="hint-title">Hints:</div>
+      <div class="hint-btn">Show hints</div>
+    </div>
+    <ol>
+    {{#each this.Hint}}
+      <li class="hint hiddenState">{{safe this}}</li>
+    {{/each}}
+    </ol>
+
+    <div class="summary">{{safe this.Summary}}</div>
+  </div>
+{{/each}}
+
+{{#if next}}
+  <a href='#' class="next lesson-link hide" data-next="{{next}}">Go To Next Lesson</a>
+{{/if}}
+</div>

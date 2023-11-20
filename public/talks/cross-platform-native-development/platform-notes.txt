@@ -1,0 +1,15 @@
+xamarin $25/mo
+truly native across:
+- user interface
+- platform apis
+- compiled to native code
+Forms: "over 90% code sharing across platforms" (ios, android, ms)
+Platform: "over 75% code sharing"
+http://xamarin.com/platform
+many books within past 1.5 yrs
+
+GO:
+http://www.infoq.com/news/2014/12/golang-14-release-android-gc
+http://www.slideshare.net/SeongJaePark1/hello-androidgo
+
+

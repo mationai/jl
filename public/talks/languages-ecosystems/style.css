@@ -1,0 +1,44 @@
+body { 
+  font-family: 'Droid Serif'; 
+}
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+li{
+  font-size: 24px;
+  padding: 5px;
+}
+.author{
+  position: absolute !important;
+  font-size: 20px;
+  bottom: 45px;
+  right: 65px;
+}
+.white{
+  color: #fff;
+}
+.giant{
+  font-size: 333px;
+}
+.huge{
+  font-size: 155px;
+}
+.xl, .xl li{
+  font-size: 60px;
+  padding: 10px;
+}
+.lg, .lg li{
+  font-size: 34px;
+}
+.md, .md li{
+  font-size: 20px;
+  padding: 3px;
+}
+.sm, .sm li{
+  font-size: 18px;
+}
+.xs, .xs li{
+  font-size: 16px;
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }

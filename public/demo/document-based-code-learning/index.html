@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=IE8,chrome=11" http-equiv="X-UA-Compatible">
+    <title>Live Coding Tutorial</title>
+    <link rel="stylesheet" href="static/css/normalize.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="static/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="static/css/codemirror.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="static/css/all.css" media="screen" type="text/css" />
+    <script type="text/javascript" src="static/js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/lib/underscore.js"></script>
+    <script type="text/javascript" src="static/js/lib/underscore.string.js"></script>
+    <script type="text/javascript" src="static/js/lib/handlebars.js"></script>
+    <script type="text/javascript" src="static/js/lib/handlebar_exts.js"></script>
+    <script type="text/javascript" src="static/js/lib/jquery.easing.js"></script>
+    <script type="text/javascript" src="static/fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script type="text/javascript" src="static/js/lib/codemirror.js"></script>
+    <script type="text/javascript" src="static/js/language-dependencies/javascript/Sandbox.js"></script>
+    <script type="text/javascript" src="static/ilessons/js1.js"></script>
+    <script type="text/javascript" src="static/ilessons/js2.js"></script>
+    <script type="text/javascript" src="static/ilessons/js3.js"></script>
+    <script type="text/javascript" src="static/ilessons/js4.js"></script>
+    <script type="text/javascript" src="static/js/livecode.js"></script>
+    <script type="text/javascript" src="static/js/livedoc.js"></script>
+  </head>
+  
+<body> 
+  <div id="page">
+    <div id="sidepane">
+      <h5>JavaScript for Beginners</h5>
+      <div class="helpwrap">
+        <a class="fancy helpicon" href="#helptext"><img src="static/images/help.png" alt="help"/></a>
+      </div>
+      <div class="lesson-head">Lessons:</div> 
+      <!--div class="lesson-head">Lessons: <span class="sidenote">(click on lessons to skip)</span></div--> 
+      <ol class="toc"></ol>
+<!--       <div id="survey">
+        <a id="surveylink" href="http://goo.gl/YqqVf"><div>Take Survey (after lesson 4)</div></a>
+        <div id="surveynote">Note: You can take the survey anytime once you have a feel for this new interface, but it is best if you have at least gone through some exercises in lesson 4. You can skip ahead however by clicking on lessons and exercises above.</div>
+      </div> -->
+    </div>
+    <div id="main">
+      <div id="course" class="html5-docs"></div>
+      <div id="course-ce" class="html5-docs"></div>
+    </div>
+    <div class="fancytextwrap">
+      <div id="helptext" class="fancytext">
+        <p>
+        Thank you for trying out our new approach on language learning.  Videos, glossary, and Q&A are not included here since we just want to concentrate on this new learning approach.
+        </p>
+        <p>
+        You can jump to different exercises by clicking on the console boxes or by clicking on the lessons and exercises on the navigation/progress panel.  
+        </p>
+        <p>
+          The goal of this mini-course is to see if you like our new learning approach.  You do not need to complete this course.  You can skip ahead by clicking on lessons and exercises on the left.  Feel free to experiment with the exercises.  Don't worry about making mistakes.  If your solution is incorrect, simply retry by typing your new solution over the old one and press Enter.
+        </p>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24808670-2']);
+  _gaq.push(['_trackPageview']);
+
+  // (function() {
+  //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  // })();
+
+  var
+  tryNum = 0,
+  startTime = new Date(),
+  prevTime = new Date(),
+  trackCorrect = function(course){
+    tryNum += 1;
+    var 
+    curTime = new Date(),
+    secsFromPrev = Math.round((curTime - prevTime)/1000), 
+    secsFromStart = Math.round((curTime - startTime)/1000), 
+    endOfLesson = course.onLastExerciseInLesson(),
+    lesnStr = course.lesson.toString(),
+    lesnStr = lesnStr.length==1? '0'+lesnStr : lesnStr,
+    exerStr = course.exercise.toString(),
+    exerStr = exerStr.length==1? '0'+exerStr : exerStr,
+    lesExerStr = lesnStr+'-'+exerStr;
+
+    _gaq.push(['_trackEvent', 'Answer order', lesExerStr, '', tryNum]);
+    _gaq.push(['_trackEvent', 'Attempts', lesExerStr, '', course.getAttempt()]);
+    _gaq.push(['_trackEvent', 'Time on exercise(secs)', lesExerStr, '', secsFromPrev]);
+    prevTime = curTime;
+  },
+  trackIncorrect = function(course, result){
+    tryNum += 1;
+    var 
+    lesExerStr = course.lesson.toString()+'-'+course.exercise.toString();
+    _gaq.push(['_trackEvent', 'incorrect', lesExerStr, result]);
+  };
+</script>
+
+<script xmlns="http://www.w3.org/1999/html">
+// _.mixin(_.string.exports());
+  
+  jQuery('document').ready(function($){
+
+    if (false){
+    // if (true){ // if require access code
+      function checkpw(){
+        var pw = $('#pwfield').val();
+        if (pw=='learnjs'){
+          $.fancybox.close(); 
+          setTimeout(function(){ 
+            course.curEditor().focus(); 
+          }, 100);
+          _gaq.push(['_trackEvent', 'Access', 'OK', '']);
+          return false;
+        }
+        else {
+          $('#badpwmsg').removeClass('hide');
+          _gaq.push(['_trackEvent', 'Access', 'badpw', pw]);
+        }
+      };
+      $('#access').fancybox({
+        showCloseButton: false,
+        overlayColor: '#222',
+        overlayOpacity: 255,
+        hideOnOverlayClick: false,
+        enableEscapeButton: false
+      }).trigger('click');
+      setTimeout(function(){ 
+        $('#fancybox-overlay').css('height', '1333px'),
+        $('#pwfield').focus(); 
+      }, 100);
+      $('#pwfield').keypress(function(e){ 
+        if (e.which == 13) checkpw();
+        else $('#badpwmsg').addClass('hide');
+      });
+      $('#pwbtn').click(checkpw);
+    }
+
+    var i, lesson, node,
+      lessonTmpl = Handlebars.compile($("#lesson-template").html()),
+      tocTmpl = Handlebars.compile($("#toc-template").html()),
+      // lessonTmpl = Handlebars.getTemplate('lesson', '/static/js/lesson.handlebars'),
+      numLessons = CourseContent.lessons.length,
+      $course = $('#course'),
+      $courseCE = $('#course-ce'),
+      $pane = $('#sidepane .toc');
+
+    for (i=0; i<numLessons; i++){
+      lesson = CourseContent.lessons[i];
+      node = lesson.CodeEditor? $courseCE : $course;
+      node.append(lessonTmpl({
+        description: lesson.description, 
+        overview: lesson.overview, 
+        exercises: lesson.exercises, 
+        lessonNum: lesson.number, 
+        title: lesson.title, 
+        summary: lesson.Summary,
+        ce: lesson.CodeEditor? 'ce' : '',
+        hideIfCE: lesson.CodeEditor? '' : 'hide',
+        courseDescription: i==0? CourseContent.description : '',
+        courseTitle: i==0? CourseContent.title : '',
+        next: i==(numLessons-1)? '' : i+2
+      }));
+      $pane.append(
+        tocTmpl({next: i+1, lesson: lesson, exercises: lesson.exercises})
+      );
+    }
+
+    course = new Course($course, $courseCE, CourseContent.lessons)
+    course.loadLesson(true)
+
+    // $('.livecode.javascript').not('hide').addClass('vibrant-ink')
+    $('.livecode.javascript').not('hide').addClass('highlight')
+    $('.hint').hide();
+    $('.remark').hide();
+
+    // If want to show all cursor lines
+    // $('.livecode .CodeMirror-cursor').css('visibility', 'visible') 
+
+    // Events:
+    $('.output').on('evaluate', function(e, result, codeblock){
+      var 
+      $output = $(this),
+      exercise = $output.data('exercise'),
+      isCE = $(this).data('ce');
+
+      course.evaluate(result, exercise, codeblock, $output, isCE, function(correct){
+        if (correct){
+          course.onCorrect($output, isCE);
+          trackCorrect(course);
+        }else{
+          course.keepScore(correct);
+          trackIncorrect(course, result);
+        }
+      });
+    });
+
+    $(document)
+      .on('click', '.hint-btn', function(){ course.showHint(this) })
+      .on('click', '.run-btn', function(){ course.onClick(this, 'run') })
+
+    $('.lesson-link').click(function(){ course.switchLesson(this) });
+    $('.exercise-link').click(function(){ course.loadExercise(this) });
+    $('.livecode:not(.output)').click(function(){ course.onClick(this) });
+    $('.fancy').fancybox({hideOnContentClick: true});
+
+  });
+</script>
+
+<script id="lesson-template" type="text/x-handlebars-template">
+<div class="lesson">
+  <h2>{{courseTitle}}</h2>
+  <p>{{safe courseDescription}}</p>
+  <h3>Lesson {{lessonNum}} - {{title}}</h3>
+
+  <p>{{safe description}}</p>
+  {{#each overview}}
+    <h5>{{@key}}</h5>
+    <p>{{safe this}}</p>
+  {{/each}}
+
+  {{#each exercises}}
+    <div class="exercise">
+      <h4>{{this.Description}}</h4>
+      <p>{{safe this.Prompt}}</p>
+
+      {{#if this.ExerciseCode}}
+      <div class="livecode javascript hide no-output" id="ex{{../../lessonNum}}-{{@key}}code">
+        {{this.ExerciseCode}}
+      </div>
+      {{/if}}
+
+      <div class="livecode javascript no-output" id="ex{{../lessonNum}}-{{@key}}"
+        data-lesson={{../lessonNum}} data-exercise={{@key}}
+        {{#if this.ExerciseCode}} data-depends-on="ex{{../../lessonNum}}-{{@key}}code"{{/if}}
+      >{{this.EditorCode}}</div>
+
+      <div class="livecode output {{../hideIfCE}}" data-ce="{{../ce}}" data-for="ex{{../lessonNum}}-{{@key}}" data-lesson={{../lessonNum}} data-exercise={{@key}}>
+        <div class="run-btn button {{../hideIfCE}}" data-exercise={{@key}} data-lesson={{../lessonNum}}>RUN</div>
+        <div class="result-wrap"></div>
+        <div class="remark">{{safe this.Summary}}</div>
+      </div>
+
+      <div class="hint-bar">
+        <div class="hint-title">Hints:</div>
+        <div class="hint-btn" data-exercise={{@key}}>Show hints</div>
+      </div>
+      <ol>
+      {{#each this.Hint}}
+        <li class="hint hiddenState">{{safe this}}</li>
+      {{/each}}
+      </ol>
+
+    </div>
+  {{/each}}
+
+  {{#if next}}
+    <div class="link next-lesson lesson-link hide" data-next="{{next}}">Go To Next Lesson</div>
+  {{/if}}
+</div>
+</script>
+
+<script id="toc-template" type="text/x-handlebars-template">
+  <li class="toc-lesson">
+    <div class="lesson-link" data-next="{{next}}">{{lesson.title}}</div>
+    <span class="correct eval-mark hide">✔</span>
+  </li>
+  <ul class="toc-exercises">
+  {{#each exercises}}
+    <li>
+      <div class="exercise-link" data-next="{{../next}}" data-exercise="{{@key}}">{{this.Description}}</div>
+      <span class="correct eval-mark hide">✔</span>
+    </li>
+  {{/each}}
+  </ul> 
+</script>
+
+</body>
+</html>

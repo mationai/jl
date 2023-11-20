@@ -1,0 +1,30 @@
+/* Styles for livecode */
+.output {
+  font-family: monospace;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background: #fff;
+  padding: 6px;
+  border-top: 1px solid #ccc;
+  box-shadow: inset 0px 1px 1.5em rgba(0, 0, 0, 0.1); }
+
+.correct, .wrong{
+  padding: 6px; }
+
+.livecode.javascript{
+  display: block;
+  /*background: #eee;*/
+  background: #002280;
+  padding: 4px;
+  white-space: pre;
+  font-family: monospace; }
+
+/* codemirror overrides */
+.CodeMirror {
+  height: auto; 
+  padding-left: 5px;
+  line-height: 1.5em;}
+
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto; }

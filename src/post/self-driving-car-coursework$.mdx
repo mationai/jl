@@ -1,0 +1,92 @@
+---
+title: Self Driving Car Coursework
+---
+
+### Part 1 - Lane Lines Detection
+
+The goal of [part-1](https://github.com/udacity/CarND-LaneLines-P1)
+of the coursework is to piece together a pipeline to detect the line 
+segments in the image, then average/extrapolate them and draw them 
+onto the image for display.
+
+Steps:
+1. Read in image
+2. Generate Canny image output from grayscale of image
+3. Define a Region of Interest and Mask out area outside of it
+4. Use cv2.HoughLinesP() to derive line segment coordinates from step 2
+5. Calculate the left and right line coordinates from step 3 via averaging weighted slopes and y-intercepts, filtering out too short segments and filtering out slope and y-intercept outliers
+6. Draw the two lane lines from step 4.
+<img src='/imgs/img/p1/solidWhiteRight.jpg' width='600' heigh='440'/>
+7. Produce Output
+Details, discussion, and images and video output in the [Lane lines Detection repo](https://github.com/mationai/p1-lanelines-detection).
+
+### Part 2 - Traffic Sign Classifier
+
+Goals for Part 2:
+- Design of the Neural Network architecture
+- Explore and visualize the data set
+- Train, optimize, and test a model architecture
+- Try various preprocessing techniques
+- Data Augmentation/Generation
+- Use the model to make predictions on new images
+- Analyze the softmax probabilities of the new images
+- Summarize the results
+
+Additional Work to test the model:
+
+Five additional images were used for further testing and analysis:
+<img src='/imgs/img/p2/testimages.png'/>
+
+These images were found in Google Image search. Since the test images are already German traffic signs the training hasn't seen before, I decided to find US traffic sign images to see how the predictions will be like. The images have been chosen such that:
+
+2 of the 5 (No Passing and Road Work) are in the training set's 43 classes.
+1 of the 5 (Yield) is in the 43 classes, but is slightly different as stated above.
+2 of the 5 (No Pedestrian, No Exit) are not in the training set.
+
+Details, discussion, analysis and images in the [Traffic Sign Classifier repo](https://github.com/mationai/p2-traffic-sign-classifier).
+
+### Part 3 - Behavioral Cloning
+
+To train a computer to drive itself, images from a camera attached to the car and its corresponding steering and other outputs can be feed to a convolutional neural network to learn its own outputs when it encounters similar data. This technique is called behavioral cloning.
+
+The goals / steps of this project are the following:
+
+- Use the simulator to collect data of good driving behavior
+- Build, a convolution neural network in Keras that predicts steering angles from images
+- Train and validate the model with a training and validation set
+- Test that the model successfully drives around track one without leaving the road
+
+Details, discussion and analysis in the [Behavioral Cloning repo](https://github.com/mationai/p3-behavior-cloning).
+
+### Part 4 - Advanced Lane Lines Detection
+
+The goals of this project are as follows:
+
+- Compute the camera calibration matrix and distortion coefficients given a set of chessboard images
+- Apply a distortion correction to raw images
+- Use color transforms, gradients, etc., to create a thresholded binary image
+- Apply a perspective transform to rectify binary image ("birds-eye view")
+- Detect lane pixels and fit to find the lane boundary
+- Determine the curvature of the lane and vehicle position with respect to center
+- Warp the detected lane boundaries back onto the original image
+- Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position
+
+Sample pipeline output image with lane lines identified:
+<img src='/imgs/img/p4/straight_lines1-pipeline.jpg'/>
+
+Details, discussion, analysis, images and videos in the [Advanced Lane Lines Detection repo](https://github.com/mationai/p4-advanced-lane-lines).
+
+### Part 5 - Vehicle Detection
+
+The goals of this project are as follows:
+
+- Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
+- Explore other features in additional to HOG
+- Implement a sliding-window technique and use your trained classifier to search for vehicles in images
+- Run pipeline on a video stream and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles
+- Estimate a bounding box for vehicles detected
+
+Sample pipeline output image with vehicles identified:
+<img src='/imgs/img/p5/singleimage-pipeline.jpg'/>
+
+Details, discussion, analysis, images and videos in the [Vehicle Detection repo](https://github.com/mationai/p5-vehicle-detection).

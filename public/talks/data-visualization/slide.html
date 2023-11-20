@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(style.css);
+    </style>
+  </head>
+  <!-- https://github.com/gnab/remark - open this file in browser
+  press p to toggle notes mode
+.xl[Data Visualization ]
+  -->
+  <body>
+    <a href="/talks" style="z-index:9;position:fixed;bottom:10px;left:10px;text-decoration:none;"><=Exit</a>
+    <textarea id="source">
+class: center, middle
+background-image: url(Literary-Organism-Poster.jpg)
+
+.lower-left.lgr[Data Visualization]
+.author[John Leung 2016]
+
+---
+# Topics
+1. Overview
+2. Types of Graphical Visualizations
+3. Tools
+4. Inspirations
+
+---
+# Data Visualization
+- Visual Communication
+- Visual Representation and Abstraction of Data
+- Techniques used to communicate data or information by encoding it as visual objects (e.g., points, lines or bars) contained in graphics 
+- Is both an art and a science
+
+---
+## Goals
+- To communicate information clearly and efficiently through graphical means
+- To help users analyze and reason about data and evidence
+- To make complex data more accessible, understandable and usable, such as making comparisons or understanding causality
+- To create a better understanding of the data
+- To help uncover trends, realize insights, explore sources, and tell stories [Eg. Minimum Wage](http://visual.ly/vizbox/inequality-in-america/#graphcontainer-2)
+- To stimulate viewer engagement and attention [Eg. - Climate Change](http://labs.enigma.io/climate-change-map/)
+
+---
+## Graphical Displays Should
+- Show the data
+- Induce the viewer to think about the substance
+- Avoid distorting what the data has to say
+- Present many numbers in a small space
+- Make large data sets coherent
+- Encourage the eye to compare different pieces of data
+- Reveal the data at several levels of detail, from a broad overview to the fine structure
+- Serve a reasonably clear purpose: description, exploration, tabulation or decoration
+- Be closely integrated with the statistical and verbal descriptions of a data set
+
+---
+class: center, middle
+# Types of Graphical Visualizations
+
+---
+# Time-series
+- A single variable is captured over a period of time, such as the unemployment rate over a 10-year period
+- Useful for demonstrating trends and periodicity
+
+---
+### Line Charts &nbsp; [Eg: Stock charts](http://finance.yahoo.com/chart/AAPL)
+### Area Charts / Layered Area &nbsp; [Eg.](http://survey.timeviz.net/)
+### Percent Area Charts &nbsp; [Eg.](http://recharts.org/examples#PercentAreaChart)
+### Curve Fitting Charts &nbsp; [Explaination](http://www.originlab.com/index.aspx?go=Products/Origin/DataAnalysis/CurveFitting)
+### Spline Charts &nbsp; [Eg.](http://www.highcharts.com/docs/chart-and-series-types/areaspline-chart)
+### OHLC, Candlestick Charts &nbsp; [Eg.](http://www.highcharts.com/docs/chart-and-series-types/ohlc-chart)
+### [Real World Example](https://github.com/nodejs/node/graphs/contributors)
+
+---
+### Rank Charts / Bump Chart
+![image](top-countries-for-nuclear-power.jpg)
+
+---
+### Gap charts
+- Builds on the rank chart by allowing extra space between curves to represent value difference behind the ranking
+<br>
+[Eg. - visurugby](http://visurugby.free.fr/)
+
+### Impact Charts
+[Eg.](http://dmitrybaranovskiy.github.io/raphael/github/impact.html)
+
+---
+### Horizon Graphs
+[Explanation - Flowing Data](https://flowingdata.com/2015/07/02/changing-price-of-food-items-and-horizon-graphs/)
+
+---
+# Ranking
+- To measure a single variable across discrete members of a group
+### Bar Charts
+- [Eg. 1](http://www.highcharts.com/docs/chart-and-series-types/bar-chart)
+- [Eg. 2](http://www.ausmt.org/imagefiles/155/155LEFigure2.png)
+
+---
+# Part-to-whole
+- Categorical subdivisions are measured as a ratio to the whole
+- Pie charts and bar charts show the comparison of ratios well
+
+---
+# Deviation
+- Categorical subdivisions are compared against a reference, such as a comparison of actual vs. budget expenses
+- Bar charts can show comparison of the actual versus the reference amount
+[Eg. - Deviation Bar Graph](http://betterevaluation.org/evaluation-options/deviation_bar_graph)
+
+---
+# Frequency distribution
+- Shows the number of observations of a particular variable for given interval, such as the number of years in which the stock market return is between intervals such as 0-10%, 11-20%, etc.
+
+### Histogram
+- A type of bar chart, may be used for this type of analysis
+[Eg. 3D histogram](http://stackoverflow.com/questions/23907929/matlab-create-3d-histogram-from-sampled-data)
+
+### Circular Histogram / SolarPlot &nbsp; [Eg.](http://survey.timeviz.net/)
+
+---
+### Box plot 
+- Helps visualize key statistics about the distribution, such as median, quartiles, outliers, etc.
+- Similar to candlestick charts
+<br>
+[Eg.](http://www.highcharts.com/docs/chart-and-series-types/box-plot-series)
+
+---
+# Correlation
+- Comparison between observations represented by two or more variables
+ to determine if they tend to move in the same or opposite directions
+- Eg. Plotting unemployment (X) and inflation (Y) for duration
+- To emphasize outliers
+
+### Scatter plot &nbsp; [Eg.](http://www.highcharts.com/docs/chart-and-series-types/scatter-chart)
+
+### Heat Map &nbsp; [Eg.](http://www.highcharts.com/docs/chart-and-series-types/heatmap)
+
+### Color Coded Tables/Tier List &nbsp; [Eg.](http://www.gamasutra.com/blogs/EduardoGraells/20141217/232531/From_Game_Balance_and_MetaGame_to_Matchup_Prediction_Understanding_the_Street_Fighter_Tier_List.php)
+
+### Radar Chart &nbsp; [Eg.](http://recharts.org/examples#SimpleRadarChart)
+
+---
+# Geographic or geospatial
+- Comparison of a variable across a map or layout, such as the unemployment rate by state or the number of persons on the various floors of a building
+
+### Map Overlays &nbsp; [Eg. Social Explorer](http://www.socialexplorer.com/explore/maps)
+
+---
+background-image: url(worldpopulation.png)
+### Cartogram
+
+---
+### Distance Cartogram
+![:scale 99%](hkmetro.jpg)
+
+---
+### Growth Ring Maps
+[Eg.](http://survey.timeviz.net/)
+
+---
+# Interactive Explorations
+- [Google Public Data](https://www.google.com/publicdata/directory)
+
+---
+# Tools (Javascript)
+- Assemblers
+- Single Purpose Libraries
+- High level Libraries
+- Platforms and Playgrounds
+- Lists
+
+---
+## Assemblers
+- [paths.js](https://github.com/andreaferretti/paths-js)
+- [vega](https://vega.github.io/vega/) [video](https://www.youtube.com/watch?v=GdoDLuPe-Wg) [Eg.](http://sandbox.github.io/demos/nba-shot-chart-vega/)
+- [d3](https://d3js.org/)
+
+---
+## Single Purpose Libraries
+### Maps
+- [DataMaps](http://datamaps.github.io/)
+
+### Network graphs
+- [sigmajs](http://sigmajs.org/)
+- [vis.js](http://visjs.org/showcase/index.html)
+- [cola](http://marvl.infotech.monash.edu/webcola/)
+
+---
+## High level Libraries
+### d3 dependent:
+- [dc.js](http://dc-js.github.io/dc.js/)
+- [ploty](https://plot.ly/javascript/)
+- [TauCharts](https://www.taucharts.com/)
+- [plottable](http://plottablejs.org/examples/)
+- [c3](http://c3js.org/examples.html)
+- [recharts](http://recharts.org/examples)
+
+---
+## High level Libraries
+### Non d3 dependent:
+- [echarts](https://ecomfe.github.io/echarts/doc/feature-en.html)
+- [charts.js](http://www.chartjs.org/)
+- [highcharts](http://www.highcharts.com/docs)
+
+### Non open source
+- [fusion charts](http://www.fusioncharts.com/)
+- [AM Charts](https://www.amcharts.com/)
+
+---
+## Platforms and Playgrounds
+- [caravel](https://github.com/airbnb/caravel)
+- [Runkit](https://runkit.com/runkit/d3-example-from-beaker)
+- [Lyra](http://idl.cs.washington.edu/projects/lyra/)
+- [Hydrogen](https://github.com/nteract/hydrogen)
+
+---
+## Lists
+- https://github.com/fasouto/awesome-dataviz
+- http://www.jsgraphs.com/
+
+---
+# Inspirations / Eye Candies
+- [d3 Gallery](https://github.com/d3/d3/wiki/Gallery)
+- [TimeViz Browser](http://survey.timeviz.net/)
+- [information aesthetics](http://infosthetics.com/)
+- [Data Pointed](http://www.datapointed.net/)
+- [Information Geographies](http://geography.oii.ox.ac.uk/?page=home)
+- [Flowing Data](http://flowingdata.com/)
+- [Foreign Born Population](http://dsl.richmond.edu/panorama/foreignborn/#decade=1850)
+
+---
+## Sources
+.sm[
+### [Wikipedia](https://en.wikipedia.org/wiki/Data_visualization)
+### Images:
+- [Cover Image](http://www.notcot.com/images/2008/04/Literary-Organism-Poster.jpg)
+- [World Population](https://media.npr.org/assets/img/2015/02/06/newmap_wide-417bfd8257decb259ad7d65c157456de18015f19.jpg?s=1400)
+- [Nuclear Power](http://www.carbonbrief.org/wp-content/uploads/2015/08/top-countries-for-nuclear-power.jpg)
+- [HK Metro](https://www.travelchinaguide.com/images/map/hongkong/metro.jpg)
+### https://github.com/mationai/presentations
+]
+
+    </textarea>
+    <script src="../remark.min.js"></script>
+    <script>
+remark.macros.scale = function(percentage){
+  var url = this;
+  return '<img src="' + url + '" style="width: ' + percentage + '" />';
+};
+var slideshow = remark.create();
+    </script>
+  </body>
+</html>

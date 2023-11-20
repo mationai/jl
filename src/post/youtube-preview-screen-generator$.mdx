@@ -1,0 +1,45 @@
+---
+title: Youtube Video Preview Image Generator
+---
+
+Currently, to embed a video such as youtube video on a webpage, you need to include the iframe into the html. This is a problem in markdown parsers as iframes are not allowed.
+
+[Stack Overflow](https://stackoverflow.com/questions/11804820/embed-a-youtube-video) has a nice solution around it. Instead of inserting the iframe, insert a video preview image to indicate to user it is a video. The image will however be a link to the youtube site instead of embedded in the page. It is a nice hack. 
+
+However, to make the preview image look like a video, you need to capture a screen shot of the video. There should be an easier alternative. After not having much luck finding such tool, I decide to make one.
+
+#### Requirements
+`cv2`, `PIL`, `numpy`
+
+#### Usage
+``` 
+gen_youtube_preview.py <image> [image-out-width=720]
+ -OR-
+gen_youtube_preview.py <video> <frame #> [image-out-width=720]
+Eg.
+gen_youtube_preview.py path/to/video.mp4 1
+```
+
+or for generic (non-youtube) play triangle icon:
+
+``` 
+gen_preview.py <image> [image-out-width=720]
+ -OR-
+gen_preview.py <video> <frame #> [image-out-width=720]
+Eg.
+gen_preview.py path/to/video.mp4 1
+```
+
+This will generate a video preview image and also print out the markdown linking syntax.
+
+Generic (non-youtube) video preview
+![](/img/vid_util/out-yellow-preview720.jpg "Embedded Video Preview Image")
+
+Youtube video preview
+![](/img/vid_util/out-yellow-preview720.png "Embedded Video Preview Image")
+
+I bet you wanted to click that, didn't you? ;-)
+
+All video previews in my github READMEs are generated using this tool.
+
+You can find the source code [here](https://github.com/mationai/video-utils).

@@ -1,0 +1,196 @@
+@charset "UTF-8";
+/* =Base *//*************************************************************/
+  body {
+    font-family: 'Quicksand', sans-serif;  
+    font-size: 100%;
+    color: #012;
+    text-size-adjust: 100%;
+    background-color: #FFF; }
+
+  a {
+    color: #57A;
+    font-weight: bold;
+    text-decoration: none; }
+
+  p, ul, ol, dl {
+    font-size: 100%;
+    line-height: 32px; }
+
+  img {
+    display: block;
+    max-width: 100%; }
+
+  blockquote {
+    letter-spacing: 3px;
+    margin: 0px;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    padding: 0px;
+    text-align: center;
+    position: relative; }
+    blockquote footer {
+      position: absolute;
+      bottom: -35px;
+      font-size: 80%;
+      color: #333333;
+      letter-spacing: 0px;
+      left: 0px;
+      right: 0px; }
+    blockquote p {
+      display: inline;
+      font-size: 120%;
+      color: #828282;
+      font-weight: 400; }
+
+  strong {
+    color: #16a085; }
+
+  .body {
+    margin: 45px auto; }
+
+  .abs { position: absolute; }
+  .rel { position: relative; }
+  .fit { display: block; width: fit-content;}
+
+  .mt1 { margin-top: 1em; }
+  .mt2 { margin-top: 2em; }
+  .mt3 { margin-top: 3em; }
+  .mt4 { margin-top: 4em; }
+  .mt5 { margin-top: 5em; }
+  .mt05 { margin-top: 0.5em; }
+  .mt15 { margin-top: 1.5em; }
+
+  .ml1 { margin-left: 1em; }
+  .ml2 { margin-left: 2em; }
+  .ml3 { margin-left: 3em; }
+  .ml4 { margin-left: 4em; }
+  .ml5 { margin-left: 5em; }
+  .ml05 { margin-left: 0.5em; }
+  .ml15 { margin-left: 1.5em; }
+
+  .mb1 { margin-bottom: 1em; }
+  .mb2 { margin-bottom: 2em; }
+  .mb3 { margin-bottom: 3em; }
+  .mb4 { margin-bottom: 4em; }
+  .mb5 { margin-bottom: 5em; }
+  .mb05 { margin-bottom: 0.5em; }
+  .mb15 { margin-bottom: 1.5em; }
+
+/* home *//*************************************************************/
+  .icoGen {
+    font-weight: 700;
+    font-size: 200%;
+    /* text-shadow: 1px 0 0 #16a085; */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #16a085;
+    color: #16a085;
+  }
+  .logo {
+    font-size: 300%;
+    font-weight: 700;
+    color: #16a085;
+    display: block; }
+
+  .menu {
+    color: #828282;
+    font-size: 150%;
+    margin: 0px;
+    margin-top: 6px;
+    padding: 0px;
+    list-style-type: none; }
+
+  .menu__entry {
+    display: inline-block;
+    margin-right: 20px; }
+    .menu__entry:last-child {
+      margin-right: 0px; }
+
+  .menu__entry a {
+    font-weight: 400; }
+
+  .social-links {
+    float: right;
+    font-size: 150%;
+    color: #828282;
+    list-style-type: none; }
+
+  .social-links__entry {
+    display: inline-block;
+    width: 30px;
+    margin-left: 10px; }
+
+/* =Titles *//*************************************************************/
+  .page-title {
+    margin: 30px auto;
+    text-align: center; }
+
+  .page-title__text {
+    color: #222;
+    font-weight: 700;
+    font-size: 150%; }
+
+  .page-title__subtitle {
+    font-weight: 400;
+    font-size: 80%;
+    padding-bottom: 8px;
+    color: #888; }
+
+  .page-title__subtext {
+    font-weight: 500;
+    font-size: 60%;
+    color: #111; }
+
+/* list *//*************************************************************/
+  .list-title, .img-title {
+    font-weight: 700; }
+
+  .list-title {
+    font-size: 150%;
+    color: #111;
+    padding: 10px;
+    padding-left: 0; }
+
+  .img-title {
+    font-size: 135%;
+    color: #222;
+    padding: 20px; }
+
+  .item {
+    margin-bottom: 15px;
+    font-weight: 500; }
+
+  .item-title {
+    font-size: 125%;
+    font-weight: 700; }
+
+  .item-text {
+    font-size: 110%;
+    line-height: 1.35;
+    margin: 0;
+    color: #444; }
+
+  .item-date {
+    font-size: 100%;
+    float: right;
+    vertical-align: middle;
+    color: #828282; }
+
+/* =Post page *//*************************************************************/
+  .about {
+    color: #828282;
+    text-align: center;
+    line-height: 24px; }
+
+  .about__divider {
+    font-size: 100%;
+    letter-spacing: 9.09px; }
+
+  .about__text {
+    font-size: 100%; }
+
+  .center-text {
+    text-align: center;
+  }
+
+  .go-home {
+    text-align: center; }

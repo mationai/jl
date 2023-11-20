@@ -1,0 +1,37 @@
+---
+title: aiGames.ink
+---
+
+I was interested in understanding the workings of AlphaZero. So back in
+2017/2018, I read up on the papers and implemented it for the game of
+Othello (aka Reversi) in Javascript.
+
+### Idea
+
+I didn't have time to wrap it a web app at the time, so I wanted to do so now.
+The idea is to create an AI Gaming platform where game providers can submit 
+their AI games, starting with simple classic board games. Mine being the first.  
+
+I was able to get this working fairly quicky, but it order for it to work on a 
+more set of board games (and one day beyond board games), much more needs to be
+done. Thus, it is a good time to pause on it at this state. 
+
+### RevZero
+
+So, about the game. Luckily, I was able to find model weights so I didn't have
+to spend time and money to train to produce models. You can find them
+<a target='_blank' href='https://github.com/mokemokechicken/reversi-alpha-zero'>here</a>.
+The system is however implemented in python, so I won't be able to make use of the code.
+Which isn't all lost, as I wanted to truly understand the AlphaZero algorithm anyway.
+Having a working code in python did help trumendously in understanding the algorithm,
+but it was still lots of roadblocks since it is the first time I implemented something
+from a scientific paper. Special thanks also for the board and piece styling from
+<a target='_blank' href='http://lea.verou.me/demos/Reversi/'>Lea Verou</a>.
+
+Ready to get defeated? Let's go!
+<a target='_blank' className='fit'
+  href='https://aigames.ink'><img
+  src='/imgs/thumbs/aigames.svg' alt='aiGames.ink'
+  width='200' heigh='200'
+/></a>
+(click the image)
