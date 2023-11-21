@@ -1,13 +1,14 @@
 import projects from './_projects'
 import talks from './_talks'
 import blogs from './_blogs'
+import { Item } from './types'
 
-const allProjects = projects.flatMap(g => g.items)
-const allTalks = talks.flatMap(g => g.items)
-const allBlogs = blogs.flatMap(g => g.items)
+const projectItems = projects.flatMap(g => g.items)
+const blogItems = blogs.flatMap(g => g.items)
 const cfg = {
   dbg: true,
   len: {
+    miniWd: 140,
     imgWd: 290,
     imgHt: 230,
   },
@@ -33,10 +34,8 @@ const cfg = {
   projects,
   talks,
   blogs,
-  allProjects,
-  allTalks,
-  allBlogs,
-  posts: [ ...allProjects, ...allTalks, ...allBlogs],
+  posts: [...projectItems, ...blogItems]
+    .sort((a, b) => b.date > a.date ? 1 : -1) as Item[],
   navs: [{
     label: 'Projects',
     path: '/projects',

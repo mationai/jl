@@ -5,7 +5,7 @@ import { Stack, Card, Grid, Divider, Link,
 import { List } from './types'
 import cfg from './config'
 
-const { projects, len } = cfg
+const { len } = cfg
 
 export default function Projects({ lists }:{ lists :List[] }) {
   return <Stack direction='column' useFlexGap mt={1}>
@@ -21,9 +21,10 @@ export default function Projects({ lists }:{ lists :List[] }) {
         <Grid container spacing={3}>
           {items.map(({ title, img, imgHt, path, text }) =>
             <Link href={path} underline='none' key={path}>
-              <Card elevation={3} 
-                sx={{ width: len.imgWd+'px' }}
-              >
+              <Card elevation={3} sx={{
+                width: len.imgWd+'px',
+                margin: '1em',
+              }}>
                 {img ?
                   <img loading='lazy'
                     src={img} alt={title}
@@ -48,8 +49,11 @@ export default function Projects({ lists }:{ lists :List[] }) {
             </Link>
           )}
         </Grid>
-        {i < projects.length - 1 &&
-          <Divider sx={{ mt:'2em !important', width: '88%' }}/>
+        {i < lists.length - 1 &&
+          <Divider sx={{
+            width: '88%',
+            mt:'2em !important', // mb on Grid doesn't work 
+          }}/>
         }
       </Stack>
     )}

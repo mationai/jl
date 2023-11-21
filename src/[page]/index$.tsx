@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
-import { Hero, Cards } from '@/index'
+import { Hero, Cards, Posts } from '@/index'
 import cfg from '@/config'
-const { navs, projects, talks } = cfg
+const { navs, projects, posts, talks } = cfg
 
 export default function Page() {
   const { page } = useParams<{ page: string }>()
@@ -16,7 +16,7 @@ export default function Page() {
         />
       : <Hero title={nav.label}/>
     }
-    { nav.path === '/posts' ? <div>posts - todo</div>
+    { nav.path === '/posts' ? <Posts lists={posts}/>
     : nav.path === '/talks' ? <Cards lists={talks}/>
     : nav.path === '/projects' ? <Cards lists={projects}/>
     : null

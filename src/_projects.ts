@@ -1,7 +1,7 @@
 import { List } from './types'
 
 const projects = [{
-  label: 'Showcase Projects',
+  label: 'Bigger Projects',
   items: [{
     title: 'foldMation',
     img: '/imgs/thumb/fold-bird.png',
@@ -46,17 +46,19 @@ const projects = [{
     path: '/post/data-explorer',
     img: '/imgs/thumb/dataExplorer.png',
     text: "A Mind Map Data Exploration Tool to help navigate user's data and relationships",
-    date: '2018-02-14',
+    date: '2016-02-14',
   }, {
     title: 'Genome Sequencing with Seq',
     path: '/post/seq-genomics',
     img: '/imgs/thumb/seq-eg.png',
     imgHt: 180,
+    date: '2020-03-24',
     text: 'Solutions for Coursera Bioinformatics / Stepik Genome Sequencing course using Seq',
   }, {
     title: 'Self Driving Car Coursework',
     path: '/post/self-driving-car-coursework',
     img: '/imgs/thumb/p5.png',
+    date: '2018-02-13',
     imgHt: 170,
     text: 'Self Driving Car Udacity Coursework',
   }, {
@@ -64,26 +66,29 @@ const projects = [{
     path: '/post/youtube-preview-screen-generator',
     img: '/imgs/thumb/video-utils.jpg',
     imgHt: 190,
+    date: '2015-08-15',
     text: 'Video preview sceen creation script',
   }, {
     title: 'Presentations',
     path: '/talks/',
     img: '/imgs/thumb/vis.png',
     imgHt: 200,
+    date: '2017-08-11',
     text: 'Slides from my past Tech Presentations; Made with Remark.js, open sourced',
   }, {
     title: 'Functional Advent of Code',
     path: '/post/functional-aoc',
     img: '/imgs/thumb/AoC.png',
     imgHt: 200,
+    date: '2019-06-09',
     text: 'Solving Advent of Code to experiment with Functional Languages',
   }, {
     title: 'Simple Physics Engine',
     path: '/post/simple-physics-engine',
     img: '/imgs/thumb/spe.png',
     imgHt: 190,
-    text: 'A Simple 2D Physics Engine in Javascript with no dependencies',
     date: '2011-07-24',
+    text: 'A Simple 2D Physics Engine in Javascript with no dependencies',
   }],
 }] as List[]
 export default projects

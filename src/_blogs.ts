@@ -1,12 +1,7 @@
 import { List } from './types'
 
-const talks = [{
-  label: 'Presentation Slides',
-  items: [{
-    title: 'Data Visualization',
-    path: '/talks/data-visualization/slide.html',
-    text: '(2016)',
-  }, {
-  }],
+const blogs = [{
+  label: 'Blog',
+  items: [],
 }] as List[]
-export default talks
+export default blogs
