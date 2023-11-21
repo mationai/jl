@@ -3,6 +3,7 @@ export interface List {
   items: {
     title: string,
     img?: string,
+    imgHt?: number,
     path: string,
     text?: string,
   }[]

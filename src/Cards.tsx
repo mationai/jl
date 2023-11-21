@@ -7,7 +7,6 @@ import cfg from './config'
 
 const { projects, len } = cfg
 
-
 export default function Projects({ lists }:{ lists :List[] }) {
   return <Stack direction='column' useFlexGap mt={1}>
     {lists.map(({ label, items }, i) =>
@@ -20,7 +19,7 @@ export default function Projects({ lists }:{ lists :List[] }) {
           {label}
         </h2>
         <Grid container spacing={3}>
-          {items.map(({ title, img, path, text }) =>
+          {items.map(({ title, img, imgHt, path, text }) =>
             <Link href={path} underline='none' key={path}>
               <Card elevation={3} 
                 sx={{ width: len.imgWd+'px' }}
@@ -29,7 +28,7 @@ export default function Projects({ lists }:{ lists :List[] }) {
                   <img loading='lazy'
                     src={img} alt={title}
                     width={len.imgWd}
-                    height={len.imgHt}
+                    height={imgHt || len.imgHt}
                   /> :
                   <Stack height={len.imgHt+'px'}
                     alignItems='center' justifyContent='center'

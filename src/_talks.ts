@@ -4,7 +4,7 @@ const talks = [{
   label: 'Presentation Slides',
   items: [{
     title: 'Data Visualization',
-    img: '/imgs/thumbs/vis.png',
+    img: '/imgs/thumb/vis.png',
     path: '/talks/data-visualization/slide.html',
     text: '(2016)',
   }, {
