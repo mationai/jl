@@ -49,7 +49,7 @@ const cfg = {
     path: '/posts',
   }, {
     label: 'CV',
-    path: '/resume',
+    path: '/resume/index.html',
   }],
 }
 export default cfg

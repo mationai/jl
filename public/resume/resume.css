@@ -1,0 +1,90 @@
+html{ color:#000; background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{
+  margin:0;padding:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+body{ text-align:center;font:14px/1.231 arial,helvetica,clean,sans-serif;}
+#doc{margin:auto;text-align:left;width:73.076em;}
+#yui-main .yui-b{float:none; width:auto;}
+/* div needed to override other settings */
+.yui-gf .yui-u{float:right; width:74.2%;}
+.yui-gf div.left{float:left; width:13.3%;}
+.yui-gc div.left{float:left; width:66%; margin-left:0;}
+#hd:after,#bd:after,#ft:after,.yui-gc:after,.yui-gf:after{ content:".";display:block;height:0;clear:both;visibility:hidden; }
+br {
+  display: block;
+  margin: 10px 0;
+  content: " ";
+}
+
+/*
+Modified version of thingsthatarebrown.com (matt brown)'s STRIPPED DOWN RESUME TEMPLATE
+*/
+@media print{ 
+  #doc, body{
+    margin: -60px 0 -50px 0;
+    padding: 0;
+  }
+  #ft { padding-bottom: 0; }
+  .pt5-print { padding-top: 5em;} 
+  .pt5-print { padding-top: 5em;} 
+  .pb5-print { padding-bottom: 5em;}
+  .nob-print { border: none !important; }
+  h2 { line-height: 1em; }
+}
+.clear { clear: both; }
+
+/* style overrides */
+body { font-family: Georgia; color: #444; }
+a{text-decoration: none;}
+#inner { padding: 10px 80px; margin: 60px auto 0 auto; background: #f5f5f5; border: solid #666; border-width: 8px 0 0 0; }
+.yui-gf { margin-top:1.6em; padding-bottom:.5em; border-bottom: 1px solid #ccc; }
+.yui-gf .yui-u { width:81.2%; }
+
+/* override above overrides for embedded content pages */
+#content .yui-gf .yui-u { padding-left: 5em; float: left; }
+
+/* header, body, footer */
+#hd { margin: 2.5em 0 0 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc }
+#hd h1 { font-size: 48px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px;}
+#hd h2 { text-transform: uppercase; letter-spacing: 2px; }
+#ft { padding: 1em 0 3em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
+#ft p { margin-bottom: 0; text-align: center; }
+
+/* core typography and style */
+h2 { font-size: 152% }
+h3, h4 { font-size: 122%; }
+h1, h2, h3, h4 { color: #333; }
+p {font-size:1.1em; padding-left: .09em; padding-right: 1.5em; word-spacing: .1em;
+  margin: 0.75em 0; line-height:1.4}
+a { color: #990003; }
+a:hover { text-decoration: none; }
+strong { font-weight: bold; }
+p.enlarge { font-size: 125%; padding-right: 1.5em; line-height: 1.3em; font-style: italic;}
+p.enlarge span { color: #000; }
+
+.contact-info { margin-top: 5px; width: 12em; float: right; }
+.contact-info h3{float: right;}
+.job h3, .whoami { font-style: italic; }
+.whoami { padding-bottom: .5em; }
+
+/* section styles */
+.job { position: relative; margin-bottom: 1.4em; border-bottom: 1px solid #ccc; }
+.job h4 { position: absolute; top: 0; right: 0; }
+.job h2 { margin-bottom: 6px; }
+.job p { margin-bottom: 1.3em;}
+.job.prj p { padding-bottom: 1.2em; border-bottom: 1px solid #ccc;}
+.job.prj p.last { margin-bottom:0; border-bottom: none; }
+
+.talent { width: 33%; float: left; }
+.talent h2 { margin-bottom: 6px; }
+.last, .nob { border: none !important;}
+p.last { margin-bottom: -.4em; }
+.mt0{ margin-top: 0 !important; }
+.mb0{ margin-bottom: 0 !important; }
+.mb1{ margin-bottom: 1em !important; }
+.pb0{ padding-bottom: 0 !important; }
+
+/* fix georgia number misalignments */
+.num-bigger { font-size: 120%; }
+.num-upper { position: relative; bottom: 3px; }

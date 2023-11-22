@@ -1,7 +1,7 @@
 import { List } from './types'
 
 const projects = [{
-  label: 'Bigger Projects',
+  label: 'Top Projects',
   items: [{
     title: 'foldMation',
     img: '/imgs/thumb/fold-bird.png',
