@@ -4,7 +4,7 @@ import '../assets/fa/font-awesome.min.css'
 import cfg from './config'
 const { title, links, navs } = cfg
 
-export default function Header() {
+export default function Top() {
   return <header style={{ overflow: 'hidden' }}>
     <div style={{ float: 'left' }}>
       <a href='/' className='logo'>

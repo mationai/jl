@@ -20,7 +20,7 @@ const projects = [{
     title: 'Mation Spec',
     path: '/post/mation-spec',
     img: '/imgs/thumb/mation-spec.png',
-    imgHt: 180,
+    imgHt: 180, // hard to read if 170
     date: '2021-05-25',
     text: 'A Readable Configuration Specification Format for Automation and Task Runners',
   // }, {
@@ -51,7 +51,7 @@ const projects = [{
     title: 'Genome Sequencing with Seq',
     path: '/post/seq-genomics',
     img: '/imgs/thumb/seq-eg.png',
-    imgHt: 180,
+    imgHt: 200,
     date: '2020-03-24',
     text: 'Solutions for Coursera Bioinformatics / Stepik Genome Sequencing course using Seq',
   }, {
@@ -79,7 +79,7 @@ const projects = [{
     title: 'Functional Advent of Code',
     path: '/post/functional-aoc',
     img: '/imgs/thumb/AoC.png',
-    imgHt: 200,
+    imgHt: 210,
     date: '2019-06-09',
     text: 'Solving Advent of Code to experiment with Functional Languages',
   }, {
